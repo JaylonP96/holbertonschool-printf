@@ -10,7 +10,8 @@
 int _printf( const char *format, ...)
 {
 	va_list args;
-	unsigned int charSum = 0, index = 0;
+	unsigned int charSum = 0, index = 0, flagIndex;
+	char flag[] = { '#', '0', '-', ' ', '+', '\0'};
 
 	if (format == NULL)
 		return (0);
@@ -28,7 +29,20 @@ int _printf( const char *format, ...)
 		 * Getting this far ensures the current char is %
 		 * Next is decieding what we should be doing
 		 */
-		switch (format[index + 1])
+		index++;
+		flagIndex = 0;
+		while (flag[flagIndex])
+		{
+			if (flag[flagIndex] == format[index])
+			{
+				index++;
+				flagIndex = 0;
+				continue;
+			}
+			flagIndex++;
+		}
+
+		switch (format[index])
 		{
 		case 'c':
 			charSum += printChar(va_arg(args, int));
@@ -48,7 +62,7 @@ int _printf( const char *format, ...)
 			break;
 		}
 		/* Increment index past the format char */
-		index +=2;
+		index++;
 	}
 	va_end(args);
 	/*NOT IMPLEMENTED*/
