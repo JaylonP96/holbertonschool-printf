@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdarg.h>
 /**
  * printString - printing string provided
  *
@@ -8,7 +8,10 @@
 int printString(char *s)
 {
 	int i = 0;
-while ( s[i] ) 
+	
+	if (s==NULL)
+		s="(null)"; 
+	while ( s[i] ) 
  {
 	 printChar (s[i]);
 	 i++;
