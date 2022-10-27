@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 #include <stdarg.h>
 
 /**
@@ -7,17 +7,19 @@
  *
  * Return: Count of Characters printed
  */
-int _printf( char *format, ...)
+int _printf( const char *format, ...)
 {
 	va_list args;
 	unsigned int charSum = 0, index = 0;
 
+	va_start(args, format);
 	while (format[index] != '\0')
 	{
-		while (format[index] != '%')
+		if (format[index] != '%')
 		{
-			sum += printChar(format[index]);
+			charSum += printChar(format[index]);
 			index++;
+			continue;
 		}
 		/*
 		 * Getting this far ensures the current char is %
@@ -34,18 +36,18 @@ int _printf( char *format, ...)
 		case '%':
 			charSum += printChar('%');
 			break;
+		case 'd':
 		case 'i':
 			charSum += printInt(va_arg(args, int));
 			break;
-		case 'd':
-			charSum += printDouble(va_arg(args, int));
+		case '\0':
+			index--;
 			break;
-
 		}
 		/* Increment index past the format char */
 		index +=2;
 	}
-
+	va_end(args);
 	/*NOT IMPLEMENTED*/
 	return ((int)charSum);
 }
