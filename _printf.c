@@ -12,6 +12,9 @@ int _printf( const char *format, ...)
 	va_list args;
 	unsigned int charSum = 0, index = 0;
 
+	if (format == NULL)
+		return (0);
+
 	va_start(args, format);
 	while (format[index] != '\0')
 	{
