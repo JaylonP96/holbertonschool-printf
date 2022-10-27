@@ -10,7 +10,7 @@ int printString(char *s)
 	int i = 0;
 while ( s[i] ) 
  {
-	 printChar s[i];
+	 printChar (s[i]);
 	 i++;
 	}
 return (i);
