@@ -11,7 +11,9 @@ int _printf( const char *format, ...)
 {
 	va_list args;
 	unsigned int charSum = 0, index = 0, flagIndex;
-	char flag[] = { '#', '0', '-', ' ', '+', '\0'};
+	char flag[] = { '#', '1', '2', '3', '4',
+			'5', '6', '7', '8', '9', '.',
+			'0', '-', ' ', '+', '\0'};
 
 	if (format == NULL)
 		return (0);
