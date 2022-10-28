@@ -4,7 +4,7 @@
  * printInt - Print Int Value
  *@i: Int Value to print
  *
- * Return: cout of bytes wrote
+ * Return: count of bytes wrote
  */
 int printInt(int i)
 {
