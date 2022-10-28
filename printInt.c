@@ -9,13 +9,19 @@
 int printInt(int i)
 {
 	int o = 0;
+
+	if ( i < 0)
+	{
+		o += printChar('-');
+		i *= -1;
+	}
 	if (i < 10)
 	{
-		return printChar('0' +i);
+		return o + printChar('0' +i);
 	}
 	else
 	{
-		o = printInt(i / 10);
+		o += printInt(i / 10);
 		return o + printChar('0' + (i % 10));
 	}
 }
