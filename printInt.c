@@ -6,7 +6,7 @@
  *
  * Return: cout of bytes wrote
  */
-int printInt(long long i)
+int printInt(int i)
 {
 	int o = 0;
 

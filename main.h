@@ -8,6 +8,6 @@ int printChar(char);
 int _printf(const char *format, ...);
 int printDouble(float);
 int printString(char *);
-int printInt(long long);
+int printInt(int);
 
 #endif
