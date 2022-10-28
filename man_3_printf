@@ -1,0 +1,23 @@
+.TH _printf "date" "_printf man page"
+.SH NAME
+
+.SH SYNOPSIS
+
+.SH DESCRIPTION
+
+The _printf function (which derives its name from "print formatted") prints a message on the screen using a "format string" that includes the instructions to mix multiple strings into the final string to display on the screen.
+.SH RETURN VALUE
+
+.SH FORMAT OF THE FUNCTION
+
+.SH TYPES OF FORMATS
+
+.SH BUGS
+
+
+.SH NOTES
+
+.SH AUTHORS
+Philip Taylor, Jaylon Phillips
+
+.SH This is a project for Holberton School (date)
