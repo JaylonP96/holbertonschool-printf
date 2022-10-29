@@ -7,7 +7,7 @@
  *
  * Return: Count of Characters printed
  */
-int _printf( const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	unsigned int charSum = 0, index = 0, flagIndex;
