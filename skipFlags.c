@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * skipFlags - skipping the flags
+ * @index: ...
+ * @format: ...
+ * Return: (0)
+ */
 
 int skipFlags(int *index, const char *format)
 {
