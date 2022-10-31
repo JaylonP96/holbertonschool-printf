@@ -10,41 +10,20 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int charSum = 0, index = 0, flagIndex;
-	char flag[] = { '#', '1', '2', '3', '4',
-			'5', '6', '7', '8', '9', '.',
-			'0', '-', ' ', '+', '\0',
-			'h', 'l', 'L', 'j', 'z', 't'};
+	unsigned int charSum = 0, index = 0;
 
 	if (format == NULL)
 		return (0);
-
 	va_start(args, format);
 	while (format[index] != '\0')
 	{
 		if (format[index] != '%')
 		{
-			charSum += printChar(format[index]);
-			index++;
+			charSum += printChar(format[index++]);
 			continue;
 		}
-		/*
-		 * Getting this far ensures the current char is %
-		 * Next is decieding what we should be doing
-		 */
 		index++;
-		flagIndex = 0;
-		while (flag[flagIndex])
-		{
-			if (flag[flagIndex] == format[index])
-			{
-				index++;
-				flagIndex = 0;
-				continue;
-			}
-			flagIndex++;
-		}
-
+		skipFlags(&index, format);
 		switch (format[index])
 		{
 		case 'c':
@@ -60,18 +39,14 @@ int _printf(const char *format, ...)
 		case 'i':
 			charSum += printInt(va_arg(args, int));
 			break;
-		case '\0':
-			index--;
-			break;
 		default:
 			charSum += printChar('%');
 			charSum += printChar(format[index]);
 			break;
-		}
-		/* Increment index past the format char */
+		} /* Increment index past the format char */
 		index++;
 	}
 	va_end(args);
-	/*NOT IMPLEMENTED*/
+
 	return ((int)charSum);
 }

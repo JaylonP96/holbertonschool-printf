@@ -10,4 +10,6 @@ int printDouble(float);
 int printString(char *);
 int printInt(int);
 
+int skipFlags(int *index, const char *format);
+
 #endif
