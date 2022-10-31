@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int charSum = 0, index = 0;
+	int charSum = 0, index = 0;
 
 	if (format == NULL)
 		return (0);
@@ -48,5 +48,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 
-	return ((int)charSum);
+	return (charSum);
 }
