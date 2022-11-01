@@ -21,4 +21,6 @@ int main(void)
 	printf("\n");
 	_printf(NULL, "BOB");
 	printf("\n END TEST\n");
+
+	return (0);
 }
