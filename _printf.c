@@ -39,6 +39,8 @@ int _printf(const char *format, ...)
 		case 'i':
 			charSum += printInt(va_arg(args, int));
 			break;
+		case '\0':
+			return (-1);
 		default:
 			charSum += printChar('%');
 			charSum += printChar(format[index]);
