@@ -12,7 +12,7 @@ Print ARGUMENT(s) according to FORMAT:
 The _printf function (which derives its name from "print formatted") prints a message on the screen using a "format string" that includes the instructions to mix multiple strings into the final string to display on the screen.
 
 .SH RETURN VALUE
-The number of characters printed (excluding tha null byte used to end output to strings). Write output to stdout, the standart output stream.
+The number of characters printed (excluding the null byte used to end output to strings). Write output to stdout, the standart output stream.
 
 .SH FORMAT OF THE FUNCTION
 Format - is a character string.
@@ -44,6 +44,7 @@ We handle the conversion specifiers:
 No known bugs.
 
 .SH NOTES
+- Only works for characters: 's','c','i','d',&'%'.
 
 .SH AUTHOR(s)
 Philip Taylor, Jaylon Phillips, Casey Chase
