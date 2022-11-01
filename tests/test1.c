@@ -10,6 +10,7 @@ int main(void)
 	for (i = 'a'; i <= 'z'; i++)
 	{
 		out[1] = i;
+		printf("\n\n\t\t TEST CASE %c",i);
 		printf("\nInt values\n");
 		printf(out,0);
 		printf(out,-5);
@@ -20,6 +21,17 @@ int main(void)
 		_printf(out,-5);
 		_printf(out,INT_MIN);
 		_printf(out, INT_MAX);
+
+	        printf("\nString values\n");
+		printf(out,"");
+		printf(out,NULL);
+		printf(out,"\t TAB");
+		printf(out, "%% Precent");
+		printf("\n");
+		_printf(out,"");
+		_printf(out,NULL);
+		_printf(out,"\t TAB");
+		_printf(out, "%% Precent");
 
 
 	}
