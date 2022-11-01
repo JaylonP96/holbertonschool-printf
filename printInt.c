@@ -9,19 +9,24 @@
 int printInt(int i)
 {
 	int o = 0;
+	unsigned int bigI;
 
 	if (i < 0)
 	{
 		o += printChar('-');
-		i *= -1;
-	}
-	if (i < 10)
-	{
-		return (o + printChar('0' + i));
+		bigI = -i;
 	}
 	else
 	{
-		o += printInt(i / 10);
-		return (o + printChar('0' + (i % 10)));
+		bigI = i;
+	}
+	if (bigI < 10)
+	{
+		return (o + printChar('0' + bigI));
+	}
+	else
+	{
+		o += printInt(bigI / 10);
+		return (o + printChar('0' + (bigI % 10)));
 	}
 }
