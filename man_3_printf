@@ -1,23 +1,51 @@
-.TH _printf "date" "_printf man page"
+.TH _printf "11-1-2022" "_printf man page"
 .SH NAME
+_printf - copy of printf
 
 .SH SYNOPSIS
+.B #include "main.h"
+
+.B int _printf(const char *format, ...);
 
 .SH DESCRIPTION
-
+Print ARGUMENT(s) according to FORMAT:
 The _printf function (which derives its name from "print formatted") prints a message on the screen using a "format string" that includes the instructions to mix multiple strings into the final string to display on the screen.
+
 .SH RETURN VALUE
+The number of characters printed (excluding tha null byte used to end output to strings). Write output to stdout, the standart output stream.
 
 .SH FORMAT OF THE FUNCTION
+Format - is a character string.
+
+.TP
+The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more sub sequent arguments. 
 
 .SH TYPES OF FORMATS
+We handle the conversion specifiers:
+.br
+.B 'c' printChar
+- Prints a character. The int argument is converted to an unsigned char.
+.br
+.B 's' printString
+- Prints a string. The const char * argument is a pointer to an array of character type (pointer to a string).  Characters  from the  array are written up to (but not including) a terminating null byte ('\0').
+.br
+
+.B '%' printChar
+- No argument is printed, just "%".
+.br
+
+.B 'd'
+- Prints a number in decimal. The  int  argument is converted to signed decimal notation.
+.br
+.B 'i' printInt
+- Prints a number as integer.
 
 .SH BUGS
-
+No known bugs.
 
 .SH NOTES
 
-.SH AUTHORS
-Philip Taylor, Jaylon Phillips
+.SH AUTHOR(s)
+Philip Taylor, Jaylon Phillips, Casey Chase
 
-.SH This is a project for Holberton School (date)
+.SH This is a project for Holberton School (11-1-2022)
