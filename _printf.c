@@ -44,11 +44,9 @@ int _printf(const char *format, ...)
 		default:
 			charSum += printChar('%');
 			charSum += printChar(format[index]);
-			break;
 		} /* Increment index past the format char */
 		index++;
 	}
 	va_end(args);
-
 	return (charSum);
 }
